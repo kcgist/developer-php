@@ -16,3 +16,23 @@ This guide will show you how to install and configure Xdebug for remote debuggin
 [SSH Reverse Tunnels for Local Web Development with SSL](./reverse_web.md)
 
 How to expose a locally hosted apache server to the internet via a reverse ssh tunnel for local web development with SSL.
+
+## Common settings for SSH
+
+Many of these guides require modifying the ssh server. This is a combo setting for all of these guides.
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+```bash
+AllowTcpForwarding yes
+PermitTunnel yes
+GatewayPorts yes
+```
+
+Save and close the file. To apply the changes, restart SSH:
+
+```bash
+sudo systemctl restart ssh
+```
