@@ -133,7 +133,7 @@ To kill the tunnel:
 sudo killall autossh
 ```
 
-### Mount the VM's filesystem on the lapto with sshfs (Optional)
+### Mount the VM's filesystem on the laptop with sshfs (Optional)
 
 - Install sshfs on ubuntu:
 ```
