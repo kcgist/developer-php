@@ -87,7 +87,7 @@ Open PHPStorm and go to `Settings` > `Languages & Frameworks` > `PHP` > `Debug`.
 
 Install this extension https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug
 
-Create or edit your workspace settings like this.
+Create or edit your workspace settings like this. The path in the settings is a fuse mount point see [Mount the VM's filesystem on the laptop with sshfs](./ssh.md#mount-the-vms-filesystem-on-the-laptop-with-sshfs-optional)
 
 ```json
 {
@@ -96,8 +96,8 @@ Create or edit your workspace settings like this.
 			"path": "."
 		},
 		{
-			"path": "../../../Servers/dev/tools",
-			"name": "tools"
+			"path": "../../../vm/html",
+			"name": "html"
 		}
 	],
 	"launch": {
@@ -109,18 +109,18 @@ Create or edit your workspace settings like this.
 				"request": "launch",
 				"port": 9003,
 				"pathMappings": {
-					"/var/www/html/tools": "${workspaceFolder:tools}"
+					"/var/www/html": "${workspaceFolder:html}"
 				}
 			},
 			{
-				"name": "Tools",
+				"name": "HTML",
 				"request": "launch",
 				"type": "msedge",
 				"configurations": [
 					"Open Edge DevTools"
 				],
-				"url": "https://hostsite.com/tools/",
-				"webRoot": "${workspaceFolder:tools}"
+				"url": "https://hostsite.com/",
+				"webRoot": "${workspaceFolder:html}"
 			}
 		],
 	}
